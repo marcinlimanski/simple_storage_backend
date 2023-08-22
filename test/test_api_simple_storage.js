@@ -22,7 +22,7 @@ describe('API Tests', () => {
     describe('getBalance', () => {
         it('should get balance from the API', async () => {
             const balance = await getBalance();
-            expect(balance).to.be.a('number'); // Assuming balance is returned as a string
+            expect(balance).to.be.a('number'); 
         });
     });
 
