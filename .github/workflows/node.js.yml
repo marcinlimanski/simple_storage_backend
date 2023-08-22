@@ -31,4 +31,4 @@ jobs:
     - name: Runnig install
       run: npm install
     - name: Running Tests
-      run: npx mocha tests
+      run: npx mocha test
