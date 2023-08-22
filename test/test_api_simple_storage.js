@@ -7,11 +7,17 @@ const nock = require('nock');
 chai.use(chaiHttp);
 const expect = chai.expect;
 
+let getBalanceResponse = {
+    "balance": {
+        "output": 0
+    }
+}
+
 // Mock the APIs
 const mockGetBalance = nock('https://u0xv62mbgj-u0etdf90is-connect.us0-aws.kaleido.io')
     .get('/instances/0xd5f8c1cee64d44adab4c7466f848252ea74db6dd/getBalance')
     .query(true) // Allow any query parameters
-    .reply(200, '100'); // Simulate API response
+    .reply(200, getBalanceResponse); // Simulate API response
 
 const mockSetBalance = nock('https://u0xv62mbgj-u0etdf90is-connect.us0-aws.kaleido.io')
     .post('/instances/0xd5f8c1cee64d44adab4c7466f848252ea74db6dd/set')

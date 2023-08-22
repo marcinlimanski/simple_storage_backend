@@ -29,6 +29,7 @@ async function setBalance(newBalance) {
 
     try {
         const response = await axios.post(url, data, { headers });
+        console.log(response.data)
         return response.data;
     } catch (error) {
         throw error;

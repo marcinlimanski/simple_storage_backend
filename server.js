@@ -17,7 +17,7 @@ app.get('/balance', async (req, res) => {
     }
 });
 
-app.post('/setBalance', async (req, res) => {
+    app.post('/setBalance', async (req, res) => {
     const newBalance = req.body.x;
 
     try {
