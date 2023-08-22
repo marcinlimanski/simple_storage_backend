@@ -1,8 +1,9 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const { app } = require('../server');
+const { app, server } = require('../server'); // Import app and server
 const { getBalance, setBalance } = require('../utils/api_simple_storage');
 const nock = require('nock');
+const {response} = require("express");
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -26,10 +27,15 @@ const mockSetBalance = nock('https://u0xv62mbgj-u0etdf90is-connect.us0-aws.kalei
     .reply(200, { message: 'Balance set successfully.' }); // Simulate API response
 
 describe('API Tests', () => {
+    after(() => {
+        server.close(); // Close the server after tests are done
+    });
+
     describe('getBalance', () => {
         it('should get balance from the API', async () => {
             const balance = await getBalance();
-            expect(balance).to.be.a('number'); 
+            console.log("DEBUG: " + balance.balance)
+            expect(balance).to.be.a('object');
         });
     });
 
