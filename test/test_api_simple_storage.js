@@ -7,11 +7,12 @@ const nock = require('nock');
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-let getBalanceResponse = {
+const getBalanceResponse = {
     "balance": {
         "output": 0
     }
-}
+};
+const setBalanceResponse = 'Balance set successfully.';
 
 // Mock the APIs
 const mockGetBalance = nock('https://u0xv62mbgj-u0etdf90is-connect.us0-aws.kaleido.io')
@@ -36,7 +37,7 @@ describe('API Tests', () => {
         it('should set balance using the API', async () => {
             const newBalance = 6;
             const response = await setBalance(newBalance);
-            expect(response).to.have.property('message', 'Balance set successfully.');
+            expect(response).to.have.property('message', setBalanceResponse);
         });
     });
 });
