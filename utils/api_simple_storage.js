@@ -5,7 +5,6 @@ async function getBalance() {
     const url = 'https://u0xv62mbgj-u0etdf90is-connect.us0-aws.kaleido.io/instances/0xd5f8c1cee64d44adab4c7466f848252ea74db6dd/getBalance?kld-from=0xde2b1cd9d6210605e7207154f8cbd63e0a67309b';
     const headers = {
         'accept': 'application/json',
-        // TODO: hide this SHIT!!!!!
         'Authorization': config.SIMPLE_STORAGE_AUTH_HEADER
     };
 
@@ -22,7 +21,6 @@ async function setBalance(newBalance) {
     const headers = {
         'accept': 'application/json',
         'Content-Type': 'application/json',
-        // TODO: hide this SHIT!!!!!
         'Authorization': config.SIMPLE_STORAGE_AUTH_HEADER
     };
 
