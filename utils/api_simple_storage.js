@@ -19,7 +19,7 @@ async function getBalance() {
 }
 
 async function setBalance(newBalance) {
-    const url = config.KALEIDO_BASE_URL
+    const url = 'https://u0xv62mbgj-u0etdf90is-connect.us0-aws.kaleido.io/instances/0xd5f8c1cee64d44adab4c7466f848252ea74db6dd/set?kld-from=0xde2b1cd9d6210605e7207154f8cbd63e0a67309b&kld-sync=true';
     const headers = {
         'accept': 'application/json',
         'Content-Type': 'application/json',
