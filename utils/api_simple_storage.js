@@ -10,8 +10,10 @@ async function getBalance() {
 
     try {
         const response = await axios.get(url, { headers });
+        console.log(response)
         return response.data;
     } catch (error) {
+        console.log(error)
         throw error;
     }
 }
@@ -33,6 +35,7 @@ async function setBalance(newBalance) {
         console.log(response.data)
         return response.data;
     } catch (error) {
+        console.log(error)
         throw error;
     }
 }
