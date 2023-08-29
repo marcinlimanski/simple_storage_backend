@@ -21,8 +21,12 @@ app.post('/setBalance', async (req, res) => {
     const newBalance = req.body.x;
 
     try {
-        await setBalance(newBalance);
-        res.json({ message: 'Balance set successfully.' });
+        if ( isNaN(newBalance) === false ) {
+            await setBalance(newBalance);
+            res.json({ message: 'Balance set successfully.' });
+        } else {
+            res.status(422).json({ error: 'Only accepting numbers.' });
+        }
     } catch (error) {
         res.status(500).json({ error: 'An error occurred while setting balance.' });
     }
